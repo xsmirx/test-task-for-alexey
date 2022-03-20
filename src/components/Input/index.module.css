@@ -1,0 +1,21 @@
+.container {
+  margin: 20px 0;
+}
+
+.inputContainer {
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid gray;
+}
+
+.label {
+  display: block;
+  margin: 0 0 5px 0;
+  color: gray;
+}
+
+.input {
+  width: 100%;
+  border: none;
+  outline: none;
+}
