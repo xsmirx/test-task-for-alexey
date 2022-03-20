@@ -1,4 +1,4 @@
-import React, {ChangeEventHandler, FC, memo, useCallback, useEffect, useMemo} from 'react';
+import React, {ChangeEventHandler, FC, memo, useCallback, useEffect, useMemo, useRef} from 'react';
 import {GroupFieldsResult, IConfigGroupFields} from './types';
 import Input from '../Input';
 
@@ -13,13 +13,16 @@ const GroupFields: FC<IConfigGroupFields> = ({config, values, onChange}) => {
     onChange(resultObj);
   }, [inputNames, config, onChange]);
 
+  const valuesRef = useRef<GroupFieldsResult>();
+  valuesRef.current = values;
+
   const onChangeInput = useCallback<ChangeEventHandler<HTMLInputElement>>(
     event => {
       const name = event.target.name;
       const value = event.target.value;
-      onChange(prevValues => ({...prevValues, [name]: value}));
+      onChange({...valuesRef.current, [name]: value});
     },
-    [onChange]
+    [valuesRef, onChange]
   );
 
   return (

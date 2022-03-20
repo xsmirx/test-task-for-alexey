@@ -1,5 +1,4 @@
 import {InputType} from '../Input/types';
-import {Dispatch, SetStateAction} from 'react';
 
 // types for GroupsFields component
 interface IConfigField {
@@ -9,11 +8,12 @@ interface IConfigField {
 }
 
 export type ConfigFields = Record<string, IConfigField>;
+export type onChangeGroupFields = (values: GroupFieldsResult) => void;
 
 export interface IConfigGroupFields {
   config: ConfigFields;
   values: GroupFieldsResult | undefined;
-  onChange: Dispatch<SetStateAction<GroupFieldsResult | undefined>>;
+  onChange: onChangeGroupFields;
 }
 
 // types for result of GroupsFields component

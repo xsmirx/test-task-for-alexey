@@ -1,6 +1,6 @@
 import React, {FC, FormEventHandler, memo, useCallback, useRef, useState} from 'react';
 import GroupFields from '../GroupFields';
-import {GroupFieldsResult} from '../GroupFields/types';
+import {GroupFieldsResult, onChangeGroupFields} from '../GroupFields/types';
 import {config} from '../../config';
 import classes from './index.module.css';
 import {checkEmpty} from './utils/checkEmpty';
@@ -20,9 +20,13 @@ const Form: FC = () => {
     [resultRef]
   );
 
+  const onChange = useCallback<onChangeGroupFields>(values => {
+    setResult(values);
+  }, []);
+
   return (
     <form onSubmit={onSubmit}>
-      <GroupFields config={config} values={result} onChange={setResult} />
+      <GroupFields config={config} values={result} onChange={onChange} />
       <div className={classes.buttonContainer}>
         {result && (
           <button
