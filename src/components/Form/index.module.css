@@ -1,0 +1,18 @@
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.submitButton {
+  padding: 20px 80px;
+  border-radius: 5px;
+  border: none;
+  background-color: cornflowerblue;
+  cursor: pointer;
+}
+
+.submitButton[disable],
+.submitButton:disabled {
+  background-color: lightgray;
+  cursor: default;
+}

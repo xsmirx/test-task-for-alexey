@@ -1,0 +1,14 @@
+.container {
+  width: 380px;
+  border-radius: 10px;
+  padding: 50px;
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+}
+.title {
+  text-align: center;
+}
+.subtitle {
+  text-align: center;
+  color: gray;
+  margin: 20px 0;
+}

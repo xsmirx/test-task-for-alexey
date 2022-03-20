@@ -1,26 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {FC} from 'react';
+import classes from './App.module.css';
+import Form from './components/Form';
 
-function App() {
+const App: FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={classes.container}>
+      <h1 className={classes.title}>Авторизация</h1>
+      <p className={classes.subtitle}>
+        Для доступа к личному кабинету вашей компании авторизируйтесь на сайте
+      </p>
+      <Form />
     </div>
   );
-}
+};
 
 export default App;
